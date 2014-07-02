@@ -1,0 +1,39 @@
+local:
+
+install virtualbox and vagrant for your operating system
+from the vvh/ directory(checked out from git) run vagrant up from the command line
+navigate to localhost:8080 from the same machine
+any changes made in sync/wordpress will instantly take effect
+
+
+
+staging:
+
+ssh sync-dev -l dev1 (password: 'supersecret')
+the git repo is cloned in ~/sync
+for reference, the 4am dumps of sync's wordpress directory and sql are at ~/sync.tar.gz and ~/sync.sql
+
+after fetching the latest code from within the sync/ folder, running 'sudo deploy-staging.sh' will move
+production sync's wp-content into place and run its sql.
+
+this will set staging to production's last state.
+
+to update staging with what is currently in git, run 'sudo deploy.sh'.
+
+deploy.sh will remove all plugins and replace them with those from git.
+it currently uses bp-sync as its theme so theme development under a different name will require this script to be updated
+
+NOTE- in the event that there is an issue/to get an exact copy of prod, the wordpress directory
+at /var/www/html should be renamed and replaced with the wordpress directory inside of sync.tar.gz.
+
+after that, run sudo deploy-staging.sh, and finally run sudo chef-client.
+this should not need to be done unless wordpress core is a suspect in troubleshooting or the wordpress versions are different
+
+
+
+prod:
+
+when you are SUPER CERTAIN that the code on master should go to production (ie. master is fully tested
+on staging), checkout the branch sync-production-update, run git reset --hard origin/master (or checkout sync-production-update and merge origin/master),
+and then push sync-production-update. jenkins reacts to changes to this branch by deploying its contents
+to production (essentially, copying up wp-content's plugins/themes and running deploy.sh)
