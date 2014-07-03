@@ -14,7 +14,7 @@ class wordpress::install {
   }
 
   # Get a new copy of the latest wordpress release
-  # FILE TO DOWNLOAD: http://wordpress.org/latest.tar.gz
+  # FILE TO DOWNLOAD: http://wordpress.org/latest___.tar.gz
 
   exec { 'download-wordpress': #tee hee
     command => '/usr/bin/wget http://wordpress.org/latest.tar.gz',
@@ -32,6 +32,11 @@ class wordpress::install {
   # Import a MySQL database for a basic wordpress site.
   file { '/tmp/wordpress-db.sql':
     source => 'puppet:///modules/wordpress/wordpress-db.sql'
+  }
+
+  exec { 'load-db':
+    command => '/usr/bin/mysql -u wordpress -pwordpress wordpress < /tmp/wordpress-db.sql && touch /home/vagrant/db-created',
+    creates => '/home/vagrant/db-created',
   }
 
   exec { 'load-db':

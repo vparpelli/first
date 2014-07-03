@@ -19,10 +19,10 @@
 define('DB_NAME', 'wordpress');
 
 /** MySQL database username */
-define('DB_USER', 'deploy');
+define('DB_USER', 'admin');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'deploy');
+define('DB_PASSWORD', 'admin');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -59,7 +59,7 @@ define('NONCE_SALT',       '/f!7FELbTB_o+kTl#V{c^ODQ+0)dvgy,wjV#)#ZPonaZihX2kE]G
  * You can have multiple installations in one database if you give each a unique
  * prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'vvh_';
+$table_prefix  = 'wp_';
 
 /**
  * WordPress Localized Language, defaults to English.
