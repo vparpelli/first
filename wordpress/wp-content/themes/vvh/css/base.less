@@ -1,0 +1,140 @@
+html, body, {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: @site-font-color;
+}
+
+h1, h2, h3, h4, h5{
+    font-family: "Optima", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1em;
+    letter-spacing: 2px;
+    margin:0 0 25px 0;
+}
+
+h1{
+    font-size: 24px;
+    color: @headline-green;
+    text-transform: uppercase;
+}
+
+h2{
+    font-size: 20px;
+    color: @headline-blue;
+    text-transform: uppercase;
+}
+
+h3{
+    font-size: 20px;
+    color: @headline-umber;
+    margin:30px 0 20px 0;
+}
+
+h4{
+    line-height: 1.6em;
+    font-size: 18px;
+    color: @headline-umber;
+    margin:0;
+    letter-spacing: .06em;
+}
+
+h5{
+    line-height: 2em;
+    font-size: 16px;
+    color: @headline-blue;
+    margin:0;
+    letter-spacing: .06em;
+}
+
+p{
+    font-size: 14px;
+    line-height: 1.6em;
+}
+
+a:hover{
+    color: inherit;
+    text-decoration: none;
+}
+
+.adtl-horizontal-padding{
+    padding: 0 45px;
+}
+
+label{
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.custom-checkbox{
+    display: block;
+    clear: both;
+}
+
+.custom-checkbox label:before {
+    display: block;
+    float: left;
+    content: "";
+    width: 15px;
+    height:15px;
+    margin: 0 10px 15px 0;
+    line-height: 23px;
+    border: solid 1px #e5e3e3;
+    .box-shadow(inset 0px 0px 7px 0px rgba(0, 0, 0, 0.12));
+    outline: none;
+}
+
+input[type=checkbox]:checked + label:before, input[type=checkbox] + label.checked:before {  
+    content: "\2713";  
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);  
+    font-size: 20px;  
+    color: @site-font-color;  
+    text-align: center;  
+    line-height: 20px;  
+}
+
+.custom-checkbox label{
+    float: left;
+    margin-bottom: 10px;
+}
+
+
+input[type="text"], input[type="email"], textarea{
+    padding: 8px 6px;
+    margin: 0 0 20px;
+}
+
+input[type="checkbox"]{
+    margin: 0;
+    display: none;
+}
+
+input[type="radio"]{
+    margin: 0 5px 0 0;
+}
+
+input[type="radio"] + label{
+    margin: 0 15px 0 0;
+}
+
+select{
+    background: transparent;
+    padding: 5px;
+    font-size: 14px;
+    line-height: 1em;
+    .border-radius(0);
+    height: 34px;
+    .appearance(none);
+}
+
+textarea{
+    min-height: 150px;
+}
+
+input[type="text"], input[type="email"], textarea, select{
+    width: 100%;
+    border: solid 1px #e5e3e3;
+    .box-shadow(inset 0px 0px 7px 0px rgba(0,0,0,0.12));
+    outline: none;
+}
+
+
+

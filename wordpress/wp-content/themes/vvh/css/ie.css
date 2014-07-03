@@ -1,0 +1,14 @@
+/**
+ * Global Styles for older IE versions (previous to IE9).
+ */
+
+input[type=checkbox] {  
+    display: inline;
+    float: left;
+    margin: 0 10px 15px 0;
+}
+
+.custom-checkbox label:before, custom-checkbox label.request-study-list:before {
+    display: none;
+}
+
