@@ -42,6 +42,11 @@ define('DOMAIN_CURRENT_SITE', 'ec2-54-88-178-236.compute-1.amazonaws.com');
 define('PATH_CURRENT_SITE', '/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
+define('ADMIN_COOKIE_PATH', '/');
+define('COOKIE_DOMAIN', '');
+define('COOKIEPATH', '');
+define('SITECOOKIEPATH', '');
+
 
 /**#@+
  * Authentication Unique Keys and Salts.
