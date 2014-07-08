@@ -39,11 +39,6 @@ class wordpress::install {
     creates => '/home/vagrant/db-created',
   }
 
-  exec { 'load-db':
-    command => '/usr/bin/mysql -u wordpress -pwordpress wordpress < /tmp/wordpress-db.sql && touch /home/vagrant/db-created',
-    creates => '/home/vagrant/db-created',
-  }
-
   # Copy a working wp-config.php file for the vagrant setup.
   file { '/vagrant/wordpress/wp-config.php':
     source => 'puppet:///modules/wordpress/wp-config.php'
