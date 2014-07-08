@@ -34,6 +34,7 @@ define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 /* Multisite */
+define('WP_SITEURL','http://ec2-54-88-178-236.compute-1.amazonaws.com');
 define( 'WP_ALLOW_MULTISITE', true );
 define('MULTISITE', true);
 define('SUBDOMAIN_INSTALL', false);
